@@ -40,8 +40,8 @@ namespace ExcelPdfProject.NetCore.Controllers
 
             dataTable.Load(ObjectReader.Create(new List<Musteri>
             {
-                new Musteri{Id=1,Ad="Yavuz"},
-                new Musteri{Id=2,Ad="Ayse"}
+                new Musteri{Id=1,Ad="Emre"},
+                new Musteri{Id=2,Ad="Ayhan"}
             }));
 
 
@@ -59,15 +59,15 @@ namespace ExcelPdfProject.NetCore.Controllers
 
             document.Open();
 
-            //Paragraph paragraph = new Paragraph("Yavuz Selim KAHRAMAN");
+            //Paragraph paragraph = new Paragraph("Emre BAHAR");
 
             PdfPTable pdfPTable = new PdfPTable(dataTable.Columns.Count);
 
             //pdfPTable.AddCell("Ad");
             //pdfPTable.AddCell("Soyad");
 
-            //pdfPTable.AddCell("Yavuz");
-            //pdfPTable.AddCell("Kahraman");
+            //pdfPTable.AddCell("Emre");
+            //pdfPTable.AddCell("Bahar");
 
 
             for (int i = 0; i < dataTable.Columns.Count; i++)
@@ -101,14 +101,14 @@ namespace ExcelPdfProject.NetCore.Controllers
             //excelBlank.Cells[1, 1].Value = "Ad";
             //excelBlank.Cells[1, 2].Value = "Soyad";
 
-            //excelBlank.Cells[2, 1].Value = "Yavuz";
-            //excelBlank.Cells[2, 2].Value = "KAHRAMAN";
+            //excelBlank.Cells[2, 1].Value = "Emre";
+            //excelBlank.Cells[2, 2].Value = "Bahar";
 
 
             excelBlank.Cells["A1"].LoadFromCollection(new List<Musteri>
             {
-                new Musteri{Id=1,Ad="Yavuz"},
-                new Musteri{Id=2,Ad="Ayse"}
+                new Musteri{Id=1,Ad="Emre"},
+                new Musteri{Id=2,Ad="Ayhan"}
             }, true, OfficeOpenXml.Table.TableStyles.Light15);
 
 
